@@ -1,3 +1,5 @@
+brew update
+brew upgrade
 
 brew install pkg-config
 brew install automake
@@ -10,14 +12,11 @@ brew install node
 brew install nginx
 
 brew cask install dropbox
-brew cask install evernote
 brew cask install firefox
 brew cask install google-chrome
-brew cask install google-japanese-ime
 brew cask install eclipse-java
 brew cask install magican
-brew cask install skitch
-brew cask install sourcetree
+brew cask install opera
 brew cask install virtualbox
 brew cask install vlc
 brew cask install xquartz
@@ -25,3 +24,9 @@ brew cask install xquartz
 brew linkapps
 
 brew cleanup
+
+mkdir ~/.emacs.d
+mkdir ~/Develop
+
+ln -s `pwd`/../emacs/init.el ~/.emacs.d/
+ln -s `pwd`/../emacs/Cask ~/.emacs.d/

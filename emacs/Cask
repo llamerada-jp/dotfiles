@@ -1,0 +1,32 @@
+;;;; sources
+(source gnu)
+(source melpa)
+
+;;;; packages
+(depends-on "color-theme")
+
+;; auto complete
+(depends-on "auto-complete")
+(depends-on "auto-complete-clang")
+
+;; progmodes
+(depends-on "cmake-mode")
+(depends-on "haskell-mode")
+(depends-on "js2-mode")
+(depends-on "json-mode")
+(depends-on "markdown-mode")
+(depends-on "scala-mode")
+(depends-on "web-mode")
+(depends-on "yaml-mode")
+
+(depends-on "ruby-mode")
+(depends-on "ruby-block")
+(depends-on "ruby-end")
+
+;; flycheck
+(depends-on "flycheck")
+(depends-on "flycheck-pos-tip")
+(depends-on "flycheck-google-cpplint")
+
+;; Google C++ Style
+(depends-on "google-c-style")
