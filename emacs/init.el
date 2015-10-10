@@ -150,6 +150,7 @@
 (require 'web-mode)
 
 ;;; 適用する拡張子
+(add-to-list 'auto-mode-alist '("\\.js$"        . web-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml$"     . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp$"       . web-mode))
