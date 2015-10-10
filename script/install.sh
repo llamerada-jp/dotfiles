@@ -3,13 +3,13 @@ brew upgrade
 
 brew install pkg-config
 brew install automake
-brew install brew-cask
 brew install --cocoa --srgb --with-gnutls --japanese emacs
 brew install cask
 brew install cmake
 brew install llvm
 brew install node
 brew install nginx
+brew install caskroom/cask/brew-cask
 
 brew cask install dropbox
 brew cask install firefox
@@ -28,5 +28,5 @@ brew cleanup
 mkdir ~/.emacs.d
 mkdir ~/Develop
 
-ln -s `pwd`/../emacs/init.el ~/.emacs.d/
-ln -s `pwd`/../emacs/Cask ~/.emacs.d/
+ln -s `pwd`/emacs/init.el ~/.emacs.d/
+ln -s `pwd`/emacs/Cask ~/.emacs.d/
