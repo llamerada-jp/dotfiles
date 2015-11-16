@@ -17,6 +17,7 @@ brew cask install google-chrome
 brew cask install eclipse-java
 brew cask install magican
 brew cask install opera
+brew cask install sourcetree
 brew cask install virtualbox
 brew cask install vlc
 brew cask install xquartz
