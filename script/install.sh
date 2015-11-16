@@ -31,3 +31,8 @@ mkdir ~/Develop
 
 ln -s `pwd`/emacs/init.el ~/.emacs.d/
 ln -s `pwd`/emacs/Cask ~/.emacs.d/
+
+cd ~/.emacs.d
+cask upgrade
+cask install
+cask update
