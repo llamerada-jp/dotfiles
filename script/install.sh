@@ -7,10 +7,12 @@ brew install --cocoa --srgb --with-gnutls --japanese emacs
 brew install cask
 brew install cmake
 brew install llvm
+brew install lv
 brew install node
 brew install nginx
 brew install caskroom/cask/brew-cask
 
+brew cask install android-studio
 brew cask install dropbox
 brew cask install firefox
 brew cask install google-chrome
