@@ -1,6 +1,7 @@
 brew update
 brew upgrade
 
+brew install boost
 brew install pkg-config
 brew install automake
 brew install --cocoa --srgb --with-gnutls --japanese emacs
