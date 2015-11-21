@@ -1,10 +1,12 @@
+
+START_PATH=${PWD}
+
 brew update
 brew upgrade
 
-brew install boost
 brew install pkg-config
+brew install boost
 brew install automake
-brew install --cocoa --srgb --with-gnutls --japanese emacs
 brew install cask
 brew install cmake
 brew install llvm
@@ -26,9 +28,15 @@ brew cask install virtualbox
 brew cask install vlc
 brew cask install xquartz
 
-brew linkapps
+# install Ricty font
+brew tap sanemat/font
+brew install ricty
 
-brew cleanup
+cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+fc-cache -vf
+
+# install emacs
+brew install --cocoa --srgb --with-gnutls --japanese emacs
 
 mkdir ~/.emacs.d
 mkdir ~/Develop
@@ -40,3 +48,9 @@ cd ~/.emacs.d
 cask upgrade
 cask install
 cask update
+
+cd ${START_PATH}
+
+# finishing
+brew linkapps
+brew cleanup
