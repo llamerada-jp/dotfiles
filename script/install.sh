@@ -9,6 +9,7 @@ brew install boost
 brew install automake
 brew install cask
 brew install cmake
+brew install doxygen
 brew install llvm
 brew install lv
 brew install node
