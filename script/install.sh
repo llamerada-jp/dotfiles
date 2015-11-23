@@ -54,6 +54,10 @@ cask update
 
 cd ${START_PATH}
 
+# install cpplint
+curl https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py > /usr/local/bin/cpplint.py
+chmod 755 /usr/local/bin/cpplint.py
+
 # finishing
 brew linkapps
 brew cleanup
