@@ -5,7 +5,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install misc
-sudo apt-get -y install libboost-dev clang cmake curl doxygen dropbox llvm lv
+sudo apt-get -y install libboost-dev libboost-system-dev libboost-date-time-dev libboost-random-dev clang cmake curl doxygen dropbox llvm lv libssl-dev libffi-dev
 
 # install emacs
 sudo apt-get -y install emacs
