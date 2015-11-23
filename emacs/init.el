@@ -1,8 +1,9 @@
+;; Load-pathの追加
+(setq load-path (cons "~/.cask" load-path))
+(setq load-path (cons "~/.emacs.d/site-lisp" load-path))
+
 (require 'cask)
 (cask-initialize)
-
-;; Load-pathの追加
-(setq load-path (cons "~/.emacs.d/site-lisp" load-path))
 
 ;; より下に記述した物が PATH の先頭に追加されます
 (dolist (dir (list
