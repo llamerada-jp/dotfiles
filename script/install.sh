@@ -22,6 +22,7 @@ brew cask install dropbox
 brew cask install firefox
 brew cask install google-chrome
 brew cask install google-photos-backup
+brew cask install google-japanese-ime
 brew cask install eclipse-java
 brew cask install magican
 brew cask install opera
