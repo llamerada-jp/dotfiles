@@ -7,6 +7,20 @@ sudo apt-get -y upgrade
 # install misc
 sudo apt-get -y install libboost-dev libboost-system-dev libboost-date-time-dev libboost-random-dev clang cmake curl doxygen dropbox llvm lv libssl-dev libffi-dev
 
+# install Ricty font
+if [ ! -e ~/.fonts/Ricty* ]; then
+sudo apt-get -y install fontforge fonts-inconsolata fonts-migmix
+curl -L https://github.com/yascentur/Ricty/archive/master.zip > /tmp/ricty.zip
+unzip -d /tmp/ /tmp/ricty.zip
+cd /tmp/Ricty-master
+./ricty_generator.sh auto
+mkdir ~/.fonts
+cp -f Ricty*.ttf ~/.fonts/
+fc-cache -vf
+
+cd ${START_PATH}
+fi
+
 # install emacs
 sudo apt-get -y install emacs
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python 
