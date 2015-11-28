@@ -62,6 +62,16 @@ chmod 755 /usr/local/bin/cpplint.py
 brew install postgresql
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 
+# install Google Test
+curl -L https://github.com/google/googletest/archive/master.zip > /tmp/gtest.zip
+cd /tmp
+unzip gtest.zip
+cd /tmp/googletest-master
+cmake .
+make
+make install
+cd ${START_PATH}
+
 # finishing
 brew linkapps
 brew cleanup
