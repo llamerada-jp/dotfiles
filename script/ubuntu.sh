@@ -43,5 +43,12 @@ curl https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplin
 sudo mv /tmp/cpplint.py /usr/local/bin/
 sudo chmod 755 /usr/local/bin/cpplint.py
 
+# install Google Test
+sudo apt-get -y install libgtest-dev
+cd /usr/src/gtest
+sudo cmake .
+sudo make
+sudo mv /usr/src/gtest/libgtest* /usr/local/lib/
+
 # finishing
 sudo apt-get autoclean
