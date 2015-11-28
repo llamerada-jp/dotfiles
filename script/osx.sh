@@ -58,6 +58,10 @@ cd ${START_PATH}
 curl https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py > /usr/local/bin/cpplint.py
 chmod 755 /usr/local/bin/cpplint.py
 
+# install postgres
+brew install postgresql
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+
 # finishing
 brew linkapps
 brew cleanup
