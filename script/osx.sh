@@ -15,6 +15,8 @@ brew install llvm
 brew install lv
 brew install node
 brew install nginx
+brew install socat
+brew install valgrind
 brew install caskroom/cask/brew-cask
 
 brew cask install android-studio
