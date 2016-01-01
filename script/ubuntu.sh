@@ -5,7 +5,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install misc
-sudo apt-get -y install libboost-dev libboost-system-dev libboost-date-time-dev libboost-random-dev clang cmake curl doxygen dropbox llvm lv libssl-dev libffi-dev
+sudo apt-get -y install libboost1.55-dev libboost-system1.55-dev libboost-date-time1.55-dev libboost-random1.55-dev clang-3.6 cmake curl doxygen dropbox llvm-3.6 llvm-3.6-dev llvm-3.6-runtime llvm-3.6-tools lv libssl-dev libffi-dev libuv-dev libedit-dev
 
 # install Ricty font
 if [ ! -e ~/.fonts/Ricty* ]; then
@@ -49,6 +49,11 @@ cd /usr/src/gtest
 sudo cmake .
 sudo make
 sudo mv /usr/src/gtest/libgtest* /usr/local/lib/
+
+# install electron
+sudo apt-get -y install nodejs npm
+sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+sudo npm install electron-prebuilt -g
 
 # finishing
 sudo apt-get autoclean
