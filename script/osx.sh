@@ -15,6 +15,8 @@ brew install llvm
 brew install lv
 brew install node
 brew install nginx
+brew install socat
+brew install valgrind
 brew install caskroom/cask/brew-cask
 
 brew cask install android-studio
@@ -61,6 +63,16 @@ chmod 755 /usr/local/bin/cpplint.py
 # install postgres
 brew install postgresql
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+
+# install Google Test
+curl -L https://github.com/google/googletest/archive/master.zip > /tmp/gtest.zip
+cd /tmp
+unzip gtest.zip
+cd /tmp/googletest-master
+cmake .
+make
+make install
+cd ${START_PATH}
 
 # finishing
 brew linkapps
