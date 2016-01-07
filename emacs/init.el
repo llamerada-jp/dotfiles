@@ -161,8 +161,13 @@
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
+  (setq-default indent-tabs-mode nil)
   (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
+  (setq web-mode-style-padding 2)
+  (setq web-mode-script-padding 2)
+  (setq web-mode-block-padding 2)
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
