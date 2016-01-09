@@ -5,7 +5,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install misc
-sudo apt-get -y install libboost1.55-dev libboost-system1.55-dev libboost-date-time1.55-dev libboost-random1.55-dev clang-3.6 cmake curl doxygen dropbox llvm-3.6 llvm-3.6-dev llvm-3.6-runtime llvm-3.6-tools lv libssl-dev libffi-dev libuv-dev libedit-dev
+sudo apt-get -y install valgrind libboost1.55-dev libboost-system1.55-dev libboost-date-time1.55-dev libboost-random1.55-dev clang-3.6 cmake curl doxygen dropbox llvm-3.6 llvm-3.6-dev llvm-3.6-runtime llvm-3.6-tools lv libssl-dev libffi-dev libuv-dev libedit-dev libncurses5-dev
 
 # install Ricty font
 if [ ! -e ~/.fonts/Ricty* ]; then
