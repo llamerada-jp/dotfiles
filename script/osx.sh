@@ -23,12 +23,8 @@ brew cask install android-studio
 brew cask install dropbox
 brew cask install firefox
 brew cask install google-chrome
-brew cask install google-photos-backup
 brew cask install google-japanese-ime
-brew cask install eclipse-java
 brew cask install magican
-brew cask install opera
-brew cask install sourcetree
 brew cask install virtualbox
 brew cask install vlc
 brew cask install xquartz
@@ -42,6 +38,7 @@ fc-cache -vf
 
 # install emacs
 brew install --cocoa --srgb --with-gnutls --japanese emacs
+brew linkapps emacs
 
 mkdir ~/.emacs.d
 mkdir ~/Develop
@@ -77,3 +74,4 @@ cd ${START_PATH}
 # finishing
 brew linkapps
 brew cleanup
+brew cask cleanup
