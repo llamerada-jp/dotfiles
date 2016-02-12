@@ -1,4 +1,5 @@
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 START_PATH=${PWD}
 
 brew update
