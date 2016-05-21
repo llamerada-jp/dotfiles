@@ -72,6 +72,9 @@ make
 make install
 cd ${START_PATH}
 
+# install ESLint
+npm install -g eslint eslint-config-google
+
 # finishing
 brew linkapps
 brew cleanup

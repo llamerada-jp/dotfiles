@@ -174,6 +174,20 @@
   '(custom-set-variables
     '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
+;; eslint by flycheck
+(eval-after-load 'flycheck
+  '(custom-set-variables
+    '(flycheck-disabled-checkers '(javascript-jshint javascript-jscs))
+    ))
+(setq js2-include-browser-externs nil)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+(setq js2-highlight-external-variables nil)
+(setq js2-include-jslint-globals nil)
+(add-hook 'web-mode-hook
+          (lambda ()
+            (flycheck-add-mode 'javascript-eslint 'web-mode)
+            (flycheck-mode)))
 
 ;; php-mode
 (require 'php-mode)
