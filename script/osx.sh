@@ -18,16 +18,6 @@ brew install node
 brew install nginx
 brew install socat
 brew install valgrind
-brew install caskroom/cask/brew-cask
-
-brew cask install android-studio
-brew cask install dropbox
-brew cask install firefox
-brew cask install google-chrome
-brew cask install google-japanese-ime
-brew cask install magican
-brew cask install virtualbox
-brew cask install vlc
 brew cask install xquartz
 
 # install Ricty font
@@ -79,3 +69,11 @@ npm install -g eslint eslint-config-google
 brew linkapps
 brew cleanup
 brew cask cleanup
+
+echo Another application install manually
+echo Android studio
+echo Chrome
+echo Dropbox
+echo Firefox
+echo SourceTree
+echo VLC
