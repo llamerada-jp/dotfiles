@@ -1,4 +1,11 @@
 ;; Load-pathの追加
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq load-path (cons "~/.cask" load-path))
 (setq load-path (cons "~/.emacs.d/site-lisp" load-path))
 
@@ -164,10 +171,18 @@
                                 '(warning . c/c++-googlelint))))
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(flycheck-c/c++-googlelint-executable "/usr/local/bin/cpplint.py")
+ '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(flycheck-googlelint-filter "-legal/copyright,-runtime/references,-build/c++11")
  '(flycheck-googlelint-linelength "100")
- )
+ '(package-selected-packages
+   (quote
+    (yaml-mode web-mode scala-mode ruby-end ruby-block php-mode markdown-mode json-mode js2-mode haskell-mode google-c-style flycheck-pos-tip flycheck-google-cpplint color-theme cmake-mode auto-complete-clang))))
 
 (require 'flycheck-pos-tip)
 (eval-after-load 'flycheck
@@ -218,14 +233,36 @@
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq-default indent-tabs-mode nil)
+  (setq web-mode-attr-indent-offset nil)
   (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-html-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-style-padding 2)
   (setq web-mode-script-padding 2)
   (setq web-mode-block-padding 2)
+  (setq web-mode-jsx-expression-padding 2)
+  (setq tab-width 2)
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+;; jsx-mode
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+(add-hook 'js2-jsx-mode-hook 'flycheck-mode)
+(autoload 'js2-mode "js2" nil t)
+(add-hook 'js2-mode-hook
+          '(lambda ()
+             (setq js2-basic-offset 2
+                   tab-width 2
+                   indent-tabs-mode nil
+                   js2-cleanup-whitespace nil)))
+
 (provide 'init)
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
