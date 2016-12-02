@@ -272,6 +272,10 @@
                    js2-cleanup-whitespace nil)))
 
 (provide 'init)
+
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
 ;;; init.el ends here
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
