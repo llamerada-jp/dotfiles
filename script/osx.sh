@@ -20,6 +20,10 @@ brew install socat
 brew install valgrind
 brew cask install xquartz
 
+# set git user
+git config --global user.name "Yuji Ito"
+git config --global user.email llamerada.jp@gmail.com
+
 # install Ricty font
 brew tap sanemat/font
 brew install ricty

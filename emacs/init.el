@@ -31,14 +31,27 @@
 ;; 透明化
 (set-frame-parameter (selected-frame) 'alpha '(85 85))
 
-;; フォントの設定
-(set-face-attribute 'default nil
-                   :family "Ricty"
-                   :height 140)
-(set-fontset-font
- nil 'japanese-jisx0208
- (font-spec :family "Ricty"))
+;; フォントの設定 for Linux
+(if (eq system-type 'gnu/linux)
+    (set-face-attribute 'default nil
+			:family "Myrca"
+			:height 100))
 
+(if (eq system-type 'gnu/linux)
+    (set-fontset-font
+     nil 'japanese-jisx0208
+     (font-spec :family "Myrca")))
+
+;; フォントの設定 for macos
+(if (eq system-type 'darwin)
+    (set-face-attribute 'default nil
+			:family "Ricty"
+			:height 140))
+
+(if (eq system-type 'darwin)
+    (set-fontset-font
+     nil 'japanese-jisx0208
+     (font-spec :family "Ricty")))
 
 ;; 言語を日本語にする
 (set-language-environment 'Japanese)

@@ -1,34 +1,73 @@
 
+set -eux
+
 START_PATH=${PWD}
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install misc
-sudo apt-get -y install valgrind libboost1.55-dev libboost-system1.55-dev libboost-date-time1.55-dev libboost-random1.55-dev clang-3.6 cmake curl doxygen dropbox llvm-3.6 llvm-3.6-dev llvm-3.6-runtime llvm-3.6-tools lv libssl-dev libffi-dev libuv-dev libedit-dev libncurses5-dev
+sudo apt-get -y install build-essential curl git lv valgrind
 
-# install Ricty font
-if [ ! -e ~/.fonts/Ricty* ]; then
-sudo apt-get -y install fontforge fonts-inconsolata fonts-migmix
-curl -L https://github.com/yascentur/Ricty/archive/master.zip > /tmp/ricty.zip
-unzip -d /tmp/ /tmp/ricty.zip
-cd /tmp/Ricty-master
-./ricty_generator.sh auto
-mkdir ~/.fonts
-cp -f Ricty*.ttf ~/.fonts/
-fc-cache -vf
+# set git user
+git config --global user.name "Yuji Ito"
+git config --global user.email llamerada.jp@gmail.com
 
-cd ${START_PATH}
+# install packages if X-Window-System is enable
+if [ -v DISPLAY ]; then
+    sudo apt-get -y install dropbox fontforge
+
+    # install fonts
+    mkdir -p ~/.fonts
+
+    # install Ricty font
+    # if [ ! -e ~/.fonts/Ricty* ]; then
+    # 	sudo apt-get -y install fonts-inconsolata fonts-migmix
+    # 	curl -L http://www.rs.tus.ac.jp/yyusa/ricty/ricty_generator.sh > /tmp/ricty_generator.sh
+    # 	cd /tmp/
+    # 	chmod u+x ricty_generator.sh
+    # 	./ricty_generator.sh auto
+    # 	cp -f Ricty*.ttf ~/.fonts/
+    # fi
+
+    # install Myrica font
+    if [ ! -e ~/.fonts/Myrica* ]; then
+	curl -L https://github.com/tomokuni/Myrica/raw/master/product/Myrica.zip > /tmp/Myrica.zip
+	unzip -d /tmp/ /tmp/Myrica.zip
+	cp -f /tmp/Myrica.TTC ~/.fonts/
+    fi
+
+    fc-cache -vf
+    cd ${START_PATH}
 fi
 
 # install emacs
-sudo apt-get -y install emacs
-curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python 
+if [ -v DISPLAY ]; then
+    chkpkg=$(apt-cache pkgnames emacs | wc -l)
+    chkpkg24=$(apt-cache pkgnames emacs24 | wc -l)
+    if [ ${chkpkg} -ne 0 ]; then
+	sudo apt-get install -y emacs
+    elif [ ${chkpkg} -ne 0 ]; then
+	sudo apt-get install -y emacs24
+    fi
+else
+    chkpkg=$(apt-cache pkgnames emacs-nox | wc -l)
+    chkpkg24=$(apt-cache pkgnames emacs24-nox | wc -l)
+    if [ ${chkpkg} -ne 0 ]; then
+	sudo apt-get install -y emacs-nox
+    elif [ ${chkpkg} -ne 0 ]; then
+	sudo apt-get install -y emacs24-nox
+    fi
+fi
 
-mkdir ~/.emacs.d
+if [ ! -e ~/.cask ]; then
+    curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+fi
 
-ln -s `pwd`/emacs/init.el ~/.emacs.d/
-ln -s `pwd`/emacs/Cask ~/.emacs.d/
+mkdir -p ~/.emacs.d
+
+ln -fs `pwd`/emacs/init.el ~/.emacs.d/
+ln -fs `pwd`/emacs/Cask ~/.emacs.d/
 
 cd ~/.emacs.d
 ~/.cask/bin/cask upgrade-cask
@@ -49,11 +88,6 @@ cd /usr/src/gtest
 sudo cmake .
 sudo make
 sudo mv /usr/src/gtest/libgtest* /usr/local/lib/
-
-# install electron
-sudo apt-get -y install nodejs npm
-sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
-sudo npm install electron-prebuilt -g
 
 # finishing
 sudo apt-get autoclean
