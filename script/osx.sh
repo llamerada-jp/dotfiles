@@ -5,34 +5,24 @@ START_PATH=${PWD}
 brew update
 brew upgrade
 
-brew install pkg-config
-brew install boost
-brew install automake
-brew install cask
-brew install cmake
-brew install doxygen
-brew install libuv
-brew install llvm
-brew install lv
-brew install node
-brew install nginx
-brew install socat
-brew install valgrind
+brew install pkg-config automake cask lv node socat socat
 brew cask install xquartz
 
 # set git user
 git config --global user.name "Yuji Ito"
 git config --global user.email llamerada.jp@gmail.com
 
-# install Ricty font
-brew tap sanemat/font
-brew install ricty
+# install Myrica font
+if [ ! -e ~/.fonts/Myrica* ]; then
+    curl -L https://github.com/tomokuni/Myrica/raw/master/product/Myrica.zip > /tmp/Myrica.zip
+    unzip -d /tmp/ /tmp/Myrica.zip
+    cp -f /tmp/Myrica.TTC ~/Library/Fonts/
+fi
 
-cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
 fc-cache -vf
 
 # install emacs
-brew install --cocoa --srgb --with-gnutls --japanese emacs
+brew install --with-cocoa --with-librsvg --with-gnutls emacs
 brew linkapps emacs
 
 mkdir ~/.emacs.d

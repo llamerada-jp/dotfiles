@@ -20,16 +20,6 @@ if [ -v DISPLAY ]; then
     # install fonts
     mkdir -p ~/.fonts
 
-    # install Ricty font
-    # if [ ! -e ~/.fonts/Ricty* ]; then
-    # 	sudo apt-get -y install fonts-inconsolata fonts-migmix
-    # 	curl -L http://www.rs.tus.ac.jp/yyusa/ricty/ricty_generator.sh > /tmp/ricty_generator.sh
-    # 	cd /tmp/
-    # 	chmod u+x ricty_generator.sh
-    # 	./ricty_generator.sh auto
-    # 	cp -f Ricty*.ttf ~/.fonts/
-    # fi
-
     # install Myrica font
     if [ ! -e ~/.fonts/Myrica* ]; then
 	curl -L https://github.com/tomokuni/Myrica/raw/master/product/Myrica.zip > /tmp/Myrica.zip

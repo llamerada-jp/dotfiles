@@ -35,25 +35,25 @@
 (when window-system
   (if (eq system-type 'gnu/linux)
       (set-face-attribute 'default nil
-			  :family "Myrca"
+			  :family "Myrica M"
 			  :height 100)))
 
 (when window-system
   (if (eq system-type 'gnu/linux)
       (set-fontset-font
        nil 'japanese-jisx0208
-       (font-spec :family "Myrca"))))
+       (font-spec :family "Myrica M"))))
 
 ;; フォントの設定 for macos
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil
-			:family "Ricty"
+			:family "Myrica M"
 			:height 140))
 
 (if (eq system-type 'darwin)
     (set-fontset-font
      nil 'japanese-jisx0208
-     (font-spec :family "Ricty")))
+     (font-spec :family "Myrica M")))
 
 ;; 言語を日本語にする
 (set-language-environment 'Japanese)
