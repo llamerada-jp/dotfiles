@@ -31,6 +31,11 @@ if [ -v DISPLAY ]; then
     cd ${START_PATH}
 fi
 
+# install oracle java
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
 # install emacs
 if [ -v DISPLAY ]; then
     chkpkg=$(apt-cache pkgnames emacs | wc -l)
