@@ -179,25 +179,16 @@
   )
 (add-hook 'c++-mode-hook #'my-flycheck-c++-setup)
 
-(eval-after-load 'flycheck
-  '(progn
-     (require 'flycheck-google-cpplint)
-     (flycheck-add-next-checker 'c/c++-clang
-                                '(warning . c/c++-googlelint))))
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(flycheck-c/c++-googlelint-executable "/usr/local/bin/cpplint.py")
  '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
- '(flycheck-googlelint-filter "-legal/copyright,-runtime/references,-build/c++11")
- '(flycheck-googlelint-linelength "100")
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode scala-mode ruby-end ruby-block php-mode markdown-mode json-mode js2-mode haskell-mode google-c-style flycheck-pos-tip flycheck-google-cpplint color-theme cmake-mode auto-complete-clang))))
+    (yaml-mode web-mode scala-mode ruby-end ruby-block php-mode markdown-mode json-mode js2-mode haskell-mode google-c-style flycheck-pos-tip color-theme cmake-mode auto-complete-clang))))
 
 (require 'flycheck-pos-tip)
 (eval-after-load 'flycheck

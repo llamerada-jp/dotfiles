@@ -27,7 +27,6 @@
 ;; flycheck
 (depends-on "flycheck")
 (depends-on "flycheck-pos-tip")
-(depends-on "flycheck-google-cpplint")
 
 ;; Google C++ Style
 (depends-on "google-c-style")
