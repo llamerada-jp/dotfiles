@@ -23,7 +23,7 @@ fc-cache -vf
 
 # install emacs
 brew install --with-cocoa --with-librsvg --with-gnutls emacs
-brew linkapps emacs
+brew cask install emacs
 
 mkdir ~/.emacs.d
 mkdir ~/Develop

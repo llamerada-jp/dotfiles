@@ -6,7 +6,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq load-path (cons "~/.cask" load-path))
+(setq load-path (cons "/usr/local/opt/cask" load-path))
 (setq load-path (cons "~/.emacs.d/site-lisp" load-path))
 
 (require 'cask)
