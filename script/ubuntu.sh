@@ -15,7 +15,7 @@ git config --global user.email llamerada.jp@gmail.com
 
 # install packages if X-Window-System is enable
 if [ -v DISPLAY ]; then
-    sudo apt-get -y install dropbox fontforge
+    sudo apt-get -y install fontforge
 
     # install fonts
     mkdir -p ~/.fonts
