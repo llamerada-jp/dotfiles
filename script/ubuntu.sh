@@ -7,7 +7,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install misc
-sudo apt-get -y install build-essential curl git lv valgrind
+sudo apt-get -y install build-essential curl git lv valgrind dropbox
 
 # set git user
 git config --global user.name "Yuji Ito"
