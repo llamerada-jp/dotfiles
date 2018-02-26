@@ -25,11 +25,13 @@ fc-cache -vf
 brew install --with-cocoa --with-librsvg --with-gnutls emacs
 brew cask install emacs
 
-mkdir ~/.emacs.d
+mkdir ~/.emacs.d/themes
 mkdir ~/Develop
 
 ln -s `pwd`/emacs/init.el ~/.emacs.d/
 ln -s `pwd`/emacs/Cask ~/.emacs.d/
+
+curl https://raw.githubusercontent.com/emacs-jp/replace-colorthemes/master/dark-laptop-theme.el > `pwd`/emacs/themes/dark-laptop-theme.el
 
 cd ~/.emacs.d
 cask upgrade
