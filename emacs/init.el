@@ -69,11 +69,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (setq custom-theme-directory "~/.emacs.d/themes")
 (load-theme 'dark-laptop t)
-(when window-system               ; GUI時
-  ;; 現在行に色をつける
-  (global-hl-line-mode t)         ; 現在行に色をつける
-  )
-
 (unless window-system             ; CUI時
   ;; 現在行を下線
   (setq hl-line-face 'underline)  ; 現在行をアンダーライン
